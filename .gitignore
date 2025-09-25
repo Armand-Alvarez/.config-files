@@ -12,3 +12,6 @@ nvim/*
 
 tmux/*
 !tmux/**
+
+# Ignore the plugins directories
+tmux/plugins/*
