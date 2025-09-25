@@ -1,0 +1,14 @@
+# Ignore everything by default
+*
+
+# But not these files/directories
+!.gitignore
+!nvim/
+!tmux/
+
+# Optional: Ignore contents of untracked directories unless explicitly allowed
+nvim/*
+!nvim/**
+
+tmux/*
+!tmux/**
