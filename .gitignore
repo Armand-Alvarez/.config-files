@@ -5,6 +5,7 @@
 !.gitignore
 !nvim/
 !tmux/
+!.bashrc
 
 # Optional: Ignore contents of untracked directories unless explicitly allowed
 nvim/*
