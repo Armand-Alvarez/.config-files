@@ -16,3 +16,6 @@ tmux/*
 
 # Ignore the plugins directories
 tmux/plugins/*
+
+# Ignore lazylock json
+nvim/lazy-lock.json
