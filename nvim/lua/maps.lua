@@ -40,3 +40,7 @@ map("n", "<leader>fb", "<cmd>Telescope buffers<cr>") --{ desc = "Find string in 
 map("n", "<leader>fs", "<cmd>Telescope git_status<cr>") --{ desc = "Find string under cursor in cwd" })
 map("n", "<leader>fc", "<cmd>Telescope git commits<cr>") --{ desc = "Find todos" })
 --
+
+-- Neogit
+map("n", "<leader>gg", "<cmd>Neogit kind=floating<CR>")
+--
