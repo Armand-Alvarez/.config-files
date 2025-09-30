@@ -57,6 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -126,3 +127,11 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . ~/.local/lib/python3.13/site-packages/powerline/bindings/bash/powerline.sh
+
+# Git aliases
+alias gs="git status"
+alias gc="git comit -m"
+alias gaa="git add --all"
+alias gca="git commit -am"
+alias gp="git push"
+alias gd="git diff"
