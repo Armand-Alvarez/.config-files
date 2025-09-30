@@ -120,3 +120,4 @@ alias vim="nvim"
 
 # Make tmux default to using config file in ~/.config/tmux/.tmux.conf
 alias tmux="tmux -f ~/.config/tmux/.tmux.conf"
+
