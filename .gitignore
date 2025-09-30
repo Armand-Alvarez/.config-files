@@ -19,3 +19,8 @@ tmux/plugins/*
 
 # Ignore lazylock json
 nvim/lazy-lock.json
+
+# Don't ignore powerline config settings
+!powerline/
+!powerline/*
+!powerline/**
