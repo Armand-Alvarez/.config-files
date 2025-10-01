@@ -130,8 +130,9 @@ POWERLINE_BASH_SELECT=1
 
 # Git aliases
 alias gs="git status"
-alias gc="git comit -m"
-alias gaa="git add --all"
+alias gc="git commit -m"
 alias gca="git commit -am"
+alias gaa="git add --all"
 alias gp="git push"
 alias gd="git diff"
+alias ga="git add"
