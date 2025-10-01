@@ -13,12 +13,10 @@ map("n", "<leader>q", "<CMD>q<CR>")
 -- Exit insert mode
 map("i", "jk", "<ESC>")
 
--- NeoTree
-map("n", "<leader>tt", "<CMD>Neotree toggle<CR>")
-
 -- New Windows
 map("n", "<leader>o", "<CMD>vsplit<CR>")
 map("n", "<leader>p", "<CMD>split<CR>")
+--
 
 -- Window Navigation
 map("n", "<C-h>", "<C-w>h")
@@ -31,6 +29,10 @@ map("n", "<C-Left>", "<C-w><")
 map("n", "<C-Right>", "<C-w>>")
 map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
+--
+
+-- NeoTree
+map("n", "<leader>tt", "<CMD>Neotree toggle<CR>")
 --
 
 -- Telescope
