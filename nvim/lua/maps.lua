@@ -48,5 +48,5 @@ map("n", "<leader>gg", "<cmd>Neogit kind=floating<CR>")
 --
 
 -- venv-selector
-map("n", "<leader>vs", "<cmd>VenvSelector<cr>")
+map("n", "<leader>vs", "<cmd>VenvSelect<cr>")
 --

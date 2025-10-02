@@ -9,4 +9,7 @@ return {
 		search = {}, -- if you add your own searches, they go here.
 		options = {}, -- if you add plugin options, they go here.
 	},
+	config = function()
+		require("venv-selector").setup()
+	end,
 }
