@@ -7,8 +7,11 @@ end
 -- Save
 map("n", "<leader>w", "<CMD>update<CR>")
 
+-- Quit out of tab
+map("n", "<leader>qt", "<CMD>tabclose<CR>")
+
 -- Quit
-map("n", "<leader>q", "<CMD>q<CR>")
+map("n", "<leader>qq", "<CMD>q<CR>")
 
 -- Exit insert mode
 map("i", "jk", "<ESC>")
