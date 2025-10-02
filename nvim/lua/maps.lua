@@ -46,7 +46,3 @@ map("n", "<leader>fc", "<cmd>Telescope git commits<cr>") --{ desc = "Find todos"
 -- Neogit
 map("n", "<leader>gg", "<cmd>Neogit kind=floating<CR>")
 --
-
--- venv-selector
-map("n", "<leader>vs", "<cmd>VenvSelect<cr>")
---
