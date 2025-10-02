@@ -10,7 +10,7 @@ return {
 	---@module 'neo-tree'
 	---@type neotree.Config
 	opts = {
-		close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+		close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
 		popup_border_style = "NC", -- or "" to use 'winborder' on Neovim v0.11+
 		enable_git_status = true,
 		enable_diagnostics = true,
