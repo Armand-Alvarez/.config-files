@@ -53,7 +53,8 @@ map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>") --{ desc = "Fuzzy find re
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>") --{ desc = "Find string in cwd" })
 map("n", "<leader>fs", "<cmd>Telescope git_status<cr>") --{ desc = "Find string under cursor in cwd" })
 map("n", "<leader>fc", "<cmd>Telescope git commits<cr>") --{ desc = "Find todos" })
-map("n", "<leader>fa", function()
+map("n", "<leader>fd", "<cmd>Telescope diagnostics<cr><esc>") -- See diagnostics
+map("n", "<leader>fa", function() -- find from a input path
 	vim.ui.input({ prompt = "Enter path: " }, function(input)
 		if input then
 			require("telescope.builtin").find_files({ cwd = input })
@@ -73,3 +74,14 @@ map("n", "<leader>ts", "<cmd>lua require('neotest').run.stop()<cr>") -- Stop tes
 map("n", "<leader>to", "<cmd>lua require('neotest').output.open()<cr>") -- Show test output
 map("n", "<leader>tO", "<cmd>lua require('neotest').output_panel.toggle()<cr>") -- Toggle test output
 map("n", "<leader>tS", "<cmd>lua require('neotest').summary.toggle()<cr>") -- Toggle summary
+
+-- Diagnostic message
+map("n", "<leader>xd", vim.diagnostic.open_float)
+
+-- Trouble plugin
+map("n", "<leader>xX", "<cmd>Trouble diagnostics toggle focus=true<cr>") -- Toggle diagnostics
+map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>") -- Buffer Diagnostics
+map("n", "<leader>xs", "<cmd>Trouble symbols toggle focus=false<cr>") -- Symbols
+map("n", "<leader>xl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>") -- LSP Definitions, references, etc
+map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>") -- Location List
+map("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>") -- Quickfix list
