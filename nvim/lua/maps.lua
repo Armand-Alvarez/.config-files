@@ -53,6 +53,13 @@ map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>") --{ desc = "Fuzzy find re
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>") --{ desc = "Find string in cwd" })
 map("n", "<leader>fs", "<cmd>Telescope git_status<cr>") --{ desc = "Find string under cursor in cwd" })
 map("n", "<leader>fc", "<cmd>Telescope git commits<cr>") --{ desc = "Find todos" })
+map("n", "<leader>fa", function()
+	vim.ui.input({ prompt = "Enter path: " }, function(input)
+		if input then
+			require("telescope.builtin").find_files({ cwd = input })
+		end
+	end)
+end)
 
 -- Neogit
 map("n", "<leader>gg", "<cmd>Neogit kind=floating<CR>")
