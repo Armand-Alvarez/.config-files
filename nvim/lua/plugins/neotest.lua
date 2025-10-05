@@ -6,6 +6,6 @@ return {
 		"nvim-lua/plenary.nvim",
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
-		"nvim-neotest/neotest-jest",
+		"nvim-neotest/neotest-python",
 	},
 }
