@@ -16,8 +16,9 @@ map("n", "<leader>qq", "<CMD>q<CR>")
 -- Exit insert mode
 map("i", "jk", "<ESC>")
 
--- Exit terminal mode
-map("t", "<Esc>", "<C-\\><C-n>")
+-- Terminal mode
+map("t", "<Esc>", "<C-\\><C-n>") -- Exit
+map("n", "<leader>te", "<CMD>split| terminal<CR>") -- Enter
 
 -- New Windows
 map("n", "<leader>o", "<CMD>vsplit<CR>")
