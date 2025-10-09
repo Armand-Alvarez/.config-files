@@ -30,7 +30,7 @@ map("n", "<leader>rf", function()
 	vim.cmd("write")
 
 	-- Open a split terminal below and run the file
-	vim.cmd("belowright split | terminal python3 %")
+	vim.cmd("belowright split | terminal poetry run python3 %")
 end)
 
 -- Window Navigation
