@@ -71,10 +71,10 @@ map("n", "<leader>tn", "<cmd>lua require('neotest').run.run()<cr>") -- Run neare
 map("n", "<leader>tf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>") -- All tests in current file
 map("n", "<leader>ta", "<cmd>lua require('neotest').run.run({ suite = true })<cr>") -- All tests in suite
 map("n", "<leader>td", "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>") -- Debug nearest test
-map("n", "<leader>ts", "<cmd>lua require('neotest').run.stop()<cr>") -- Stop tests
-map("n", "<leader>to", "<cmd>lua require('neotest').output.open()<cr>") -- Show test output
-map("n", "<leader>tO", "<cmd>lua require('neotest').output_panel.toggle()<cr>") -- Toggle test output
-map("n", "<leader>tS", "<cmd>lua require('neotest').summary.toggle()<cr>") -- Toggle summary
+map("n", "<leader>tS", "<cmd>lua require('neotest').run.stop()<cr>") -- Stop tests
+map("n", "<leader>tO", "<cmd>lua require('neotest').output.open()<cr>") -- Show test output
+map("n", "<leader>to", "<cmd>lua require('neotest').output_panel.toggle()<cr>") -- Toggle test output
+map("n", "<leader>ts", "<cmd>lua require('neotest').summary.toggle()<cr>") -- Toggle summary
 
 -- Diagnostic message
 map("n", "<leader>xd", vim.diagnostic.open_float)
