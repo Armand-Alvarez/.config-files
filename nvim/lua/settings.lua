@@ -33,4 +33,4 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-o.cmdheight = 0
+-- o.cmdheight = 0 -- Removes the status message bar
