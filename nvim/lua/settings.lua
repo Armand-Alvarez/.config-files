@@ -26,11 +26,11 @@ o.splitright = true
 o.splitbelow = true -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "python",
-	callback = function()
-		vim.opt_local.indentexpr = ""
-	end,
-})
+--vim.api.nvim_create_autocmd("FileType", {
+--	pattern = "python",
+--	callback = function()
+--		vim.opt_local.indentexpr = ""
+--	end,
+--})
 
 -- o.cmdheight = 0 -- Removes the status message bar
