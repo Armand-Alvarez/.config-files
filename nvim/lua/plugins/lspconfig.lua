@@ -3,7 +3,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 
 	config = function()
-		local lspconfig = require("lspconfig")
 		local util = require("lspconfig.util")
 
 		-- Automatically get Poetry Python interpreter
@@ -21,7 +20,8 @@ return {
 		end
 
 		-- Setup Pyright using the new style but still within lspconfig
-		lspconfig.pyright.setup({
+		vim.lsp.config("pyright", {
+			--lspconfig.pyright.setup({
 			root_dir = util.root_pattern("pyproject.toml", ".git"),
 			settings = {
 				python = {
