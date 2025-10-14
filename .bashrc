@@ -136,3 +136,6 @@ alias gaa="git add --all"
 alias gp="git push"
 alias gd="git diff"
 alias ga="git add"
+
+# Poetry alias
+alias pea='eval $(poetry env activate)'
