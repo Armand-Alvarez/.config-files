@@ -137,3 +137,9 @@ alias gp="git push"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias ga="git add"
+
+# Created by `pipx` on 2025-10-15 21:44:19
+export PATH="$PATH:/home/charlotte/.local/bin"
+
+# Set up pipx autocomplete
+eval "$(register-python-argcomplete pipx)"
