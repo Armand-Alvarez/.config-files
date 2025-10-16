@@ -14,6 +14,9 @@ return {
 		autotag = {
 			enable = true,
 		},
+        indent = {
+            enable = false,
+        },
 		ensure_installed = {
 			"json",
 			"javascript",
