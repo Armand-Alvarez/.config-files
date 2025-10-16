@@ -11,10 +11,6 @@ return {
 			enable = true,
 			additional_vim_regex_highlighting = false,
 		},
-		indent = {
-			enable = true,
-			disable = { "python " }, -- Disables for python
-		},
 		autotag = {
 			enable = true,
 		},
