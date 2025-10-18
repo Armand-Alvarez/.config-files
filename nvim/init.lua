@@ -1,1 +1,3 @@
-require("config.lazy")
+require("config.lazy") -- Lazy configuration
+
+require("config.settings") -- Settings
