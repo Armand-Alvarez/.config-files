@@ -33,39 +33,39 @@ return {
         end
 
         -- Harpoon keymaps
-        vim.keymap.set("n", "<leader>a", function()
+        vim.keymap.set("n", "<leader>ha", function()
             list():add()
         end, { desc = "Harpoon: Add file" })
 
-        vim.keymap.set("n", "<C-e>", function()
+        vim.keymap.set("n", "<leader>th", function()
             toggle_telescope(list())
         end, { desc = "Harpoon: Telescope UI" })
 
-        vim.keymap.set("n", "<leader>e", function()
+        vim.keymap.set("n", "<leader>hl", function()
             harpoon.ui:toggle_quick_menu(list())
         end, { desc = "Harpoon: Toggle quick menu" })
 
-        vim.keymap.set("n", "<C-h>", function()
+        vim.keymap.set("n", "<leader>h1", function()
             list():select(1)
         end, { desc = "Harpoon: Select file 1" })
 
-        vim.keymap.set("n", "<C-t>", function()
+        vim.keymap.set("n", "<leader>h2", function()
             list():select(2)
         end, { desc = "Harpoon: Select file 2" })
 
-        vim.keymap.set("n", "<C-n>", function()
+        vim.keymap.set("n", "<leader>h3", function()
             list():select(3)
         end, { desc = "Harpoon: Select file 3" })
 
-        vim.keymap.set("n", "<C-s>", function()
+        vim.keymap.set("n", "<leader>h4", function()
             list():select(4)
         end, { desc = "Harpoon: Select file 4" })
 
-        vim.keymap.set("n", "<C-S-P>", function()
+        vim.keymap.set("n", "<leader>hh", function()
             list():prev()
         end, { desc = "Harpoon: Prev buffer" })
 
-        vim.keymap.set("n", "<C-S-N>", function()
+        vim.keymap.set("n", "<leader>hl", function()
             list():next()
         end, { desc = "Harpoon: Next buffer" })
     end,
