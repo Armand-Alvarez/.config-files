@@ -1,14 +1,14 @@
 local M = {}
 
 function M.setup()
-    -- 🔹 LSP Keymap
+    -- 🔹 LSP Keymap (d)
     vim.keymap.set('n', '<Leader>dl', function()
         local new_config = not vim.diagnostic.config().virtual_lines
         vim.diagnostic.config({ virtual_lines = new_config })
     end, { desc = 'Toggle diagnostic virtual_lines' })
 
 
-    -- 🔹 Harpoon Keymaps
+    -- 🔹 Harpoon Keymaps (h)
     local ok, harpoon = pcall(require, "harpoon")
     if ok then
         local conf = require("telescope.config").values
@@ -72,12 +72,12 @@ function M.setup()
         vim.notify("Harpoon not loaded. Skipping harpoon keymaps.", vim.log.levels.WARN)
     end
 
-    -- 🔹 neoclip
+    -- 🔹 neoclip (p)
     vim.keymap.set('n', '<Leader>p', function()
         vim.cmd('Telescope neoclip')
     end, { desc = 'Open Neoclip clipboard history with Telescope' })
 
-    -- Neotest keymaps
+    -- Neotest keymaps (T)
     local neotest = require("neotest")
 
     vim.keymap.set('n', '<leader>Tn', function() neotest.run.run() end, { desc = "Run nearest test" })
@@ -92,7 +92,7 @@ function M.setup()
     vim.keymap.set('n', '<leader>Tc', function() neotest.run.run({ suite = true, env = { CI = true } }) end, { desc = "Run all tests with CI" })
 
 
-    -- Nvim-tree keymaps
+    -- Nvim-tree keymaps (e)
     vim.keymap.set('n', '<leader>ee', function()
         require('nvim-tree.api').tree.toggle()
     end, { desc = 'Toggle NvimTree file explorer' })
@@ -102,7 +102,7 @@ function M.setup()
     end, { desc = 'Focus NvimTree window' })
 
 
-    -- Telescope
+    -- Telescope (f)
     vim.keymap.set('n', '<leader>ff', function()
         require('telescope.builtin').find_files()
     end, { desc = "Telescope: Find files" })
