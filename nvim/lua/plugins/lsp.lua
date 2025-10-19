@@ -2,14 +2,26 @@ return {
     "mason-org/mason-lspconfig.nvim",
     lazy = false,
     opts = {
-        ensure_installed = { "pyright" }
+        ensure_installed = { "pyright", "lua_ls" },  -- add lua_ls if you want it
     },
     dependencies = {
         { "mason-org/mason.nvim", opts = {} },
-        "neovim/nvim-lspconfig",
+        "neovim/nvim-lspconfig",  -- still needed for the config data
     },
-    vim.keymap.set('n', '<Leader>dl', function()
-        local new_config = not vim.diagnostic.config().virtual_lines
-        vim.diagnostic.config({ virtual_lines = new_config })
-    end, { desc = 'Toggle diagnostic virtual_lines' })
+    config = function()
+        -- Setup the servers using the new API (Neovim 0.11+)
+        vim.lsp.config("lua_ls", {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" },
+                    },
+                },
+            },
+        })
+        vim.lsp.enable("lua_ls")
+
+        vim.lsp.config("pyright", {})
+        vim.lsp.enable("pyright")
+    end,
 }
