@@ -33,3 +33,11 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+-- Defer loading keymaps until *after* Lazy has loaded all plugins
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    require("config.keymaps").setup()
+  end,
+})
