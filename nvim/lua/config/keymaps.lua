@@ -1,5 +1,3 @@
--- File: lua/keymaps.lua
-
 local M = {}
 
 function M.setup()
@@ -92,6 +90,17 @@ function M.setup()
     vim.keymap.set('n', '<leader>To', function() neotest.output_panel.toggle() end, { desc = "Toggle output panel" })
     vim.keymap.set('n', '<leader>Ts', function() neotest.summary.toggle() end, { desc = "Toggle summary" })
     vim.keymap.set('n', '<leader>Tc', function() neotest.run.run({ suite = true, env = { CI = true } }) end, { desc = "Run all tests with CI" })
+
+
+    -- Nvim-tree keymaps
+    vim.keymap.set('n', '<leader>ee', function()
+        require('nvim-tree.api').tree.toggle()
+    end, { desc = 'Toggle NvimTree file explorer' })
+
+    vim.keymap.set('n', '<leader>eE', function()
+        require('nvim-tree.api').tree.focus()
+    end, { desc = 'Focus NvimTree window' })
+
 
 end
 return M
