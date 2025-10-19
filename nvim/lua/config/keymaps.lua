@@ -102,5 +102,42 @@ function M.setup()
     end, { desc = 'Focus NvimTree window' })
 
 
+    -- Telescope
+    vim.keymap.set('n', '<leader>ff', function()
+        require('telescope.builtin').find_files()
+    end, { desc = "Telescope: Find files" })
+
+    vim.keymap.set('n', '<leader>fg', function()
+        require('telescope.builtin').live_grep()
+    end, { desc = "Telescope: Live grep" })
+
+    vim.keymap.set('n', '<leader>fb', function()
+        require('telescope.builtin').buffers()
+    end, { desc = "Telescope: List buffers" })
+
+    vim.keymap.set('n', '<leader>fh', function()
+        require('telescope.builtin').help_tags()
+    end, { desc = "Telescope: Help tags" })
+
+    vim.keymap.set('n', '<leader>fo', function()
+        require('telescope.builtin').oldfiles()
+    end, { desc = "Telescope: Recently opened files" })
+
+    vim.keymap.set('n', '<leader>fc', function()
+        require('telescope.builtin').commands()
+    end, { desc = "Telescope: Commands" })
+
+    vim.keymap.set('n', '<leader>fk', function()
+        require('telescope.builtin').keymaps()
+    end, { desc = "Telescope: Keymaps" })
+
+    vim.keymap.set('n', '<leader>fd', function()
+        require('telescope.builtin').diagnostics()
+    end, { desc = "Telescope: Diagnostic" })
+
+    vim.keymap.set('n', '<leader>fs', function()
+        require('telescope.builtin').builtin()
+    end, { desc = "Telescope: Show built-in pickers" })
+
 end
 return M
