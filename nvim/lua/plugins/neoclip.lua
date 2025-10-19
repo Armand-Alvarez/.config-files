@@ -6,8 +6,5 @@ return {
     },
     opts = {
         history = 100,
-        vim.keymap.set('n', '<Leader>p', function()
-            vim.cmd('Telescope neoclip')
-        end)
     }
 }

@@ -74,7 +74,24 @@ function M.setup()
         vim.notify("Harpoon not loaded. Skipping harpoon keymaps.", vim.log.levels.WARN)
     end
 
-    -- 🔹 Add more plugin keymaps here...
-end
+    -- 🔹 neoclip
+    vim.keymap.set('n', '<Leader>p', function()
+        vim.cmd('Telescope neoclip')
+    end, { desc = 'Open Neoclip clipboard history with Telescope' })
 
+    -- Neotest keymaps
+    local neotest = require("neotest")
+
+    vim.keymap.set('n', '<leader>Tn', function() neotest.run.run() end, { desc = "Run nearest test" })
+    vim.keymap.set('n', '<leader>Tf', function() neotest.run.run(vim.fn.expand('%')) end, { desc = "Run current file" })
+    vim.keymap.set('n', '<leader>Ta', function() neotest.run.run({ suite = true }) end, { desc = "Run all tests" })
+    vim.keymap.set('n', '<leader>Td', function() neotest.run.run({ strategy = "dap" }) end, { desc = "Debug nearest test" })
+    vim.keymap.set('n', '<leader>TS', function() neotest.run.stop() end, { desc = "Stop test" })
+    vim.keymap.set('n', '<leader>Tn', function() neotest.run.attach() end, { desc = "Attach to nearest test" })
+    vim.keymap.set('n', '<leader>TO', function() neotest.output.open() end, { desc = "Show test output" })
+    vim.keymap.set('n', '<leader>To', function() neotest.output_panel.toggle() end, { desc = "Toggle output panel" })
+    vim.keymap.set('n', '<leader>Ts', function() neotest.summary.toggle() end, { desc = "Toggle summary" })
+    vim.keymap.set('n', '<leader>Tc', function() neotest.run.run({ suite = true, env = { CI = true } }) end, { desc = "Run all tests with CI" })
+
+end
 return M
