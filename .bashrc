@@ -143,3 +143,6 @@ export PATH="$PATH:/home/charlotte/.local/bin"
 
 # Set up pipx autocomplete
 eval "$(register-python-argcomplete pipx)"
+
+# Alias for ollama
+alias ol="ollama run deepseek-coder:latest"
