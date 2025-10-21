@@ -83,7 +83,7 @@ function M.setup()
             list():add()
         end, { desc = "Harpoon: Add file" })
 
-        vim.keymap.set("n", "<leader>th", function()
+        vim.keymap.set("n", "<leader>fH", function()
             toggle_telescope(list())
         end, { desc = "Harpoon: Telescope UI" })
 
