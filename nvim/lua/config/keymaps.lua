@@ -1,6 +1,52 @@
 local M = {}
 
 function M.setup()
+    -- 🔹 Neovim Keymaps
+    local defaults = { noremap = true, silent = true }
+    vim.keymap.set('n', '<leader>C', ':keepjumps normal! ggyG<cr>', defaults) -- Select all text in the current buffer
+    -- Resize buffers
+    vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", defaults)
+    vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", defaults)
+    vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", defaults)
+    vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", defaults)
+    vim.keymap.set("t", "<C-Up>", "<cmd>resize -2<CR>", defaults)
+    vim.keymap.set("t", "<C-Down>", "<cmd>resize +2<CR>", defaults)
+    vim.keymap.set("t", "<C-Left>", "<cmd>vertical resize -2<CR>", defaults)
+    vim.keymap.set("t", "<C-Right>", "<cmd>vertical resize +2<CR>", defaults)
+    -- LSP
+    vim.keymap.set("n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>", defaults)
+    vim.keymap.set("n", "<leader>gi", ":lua vim.lsp.buf.implementation()<CR>", defaults)
+    vim.keymap.set("n", "K", ":lua vim.lsp.buf.hover()<CR>", defaults)
+    vim.keymap.set("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", defaults)
+    vim.keymap.set("n", "<leader>gr", ":lua vim.lsp.buf.references()<CR>", defaults)
+    local keymap = vim.keymap -- for conciseness
+    -- use jk to exit insert mode
+    keymap.set("i", "jk", "<ESC>")
+    -- clear search highlights
+    keymap.set("n", "<ESC>", ":nohl<CR>")
+    -- Terminal stuff
+
+    -- window management
+    keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
+    keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
+    keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
+    keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+    keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
+    keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
+    keymap.set("n", "<leader>tl", ":tabn<CR>") --  go to next tab
+    keymap.set("n", "<leader>th", ":tabp<CR>") --  go to previous tab
+    keymap.set("t", "<leader>sv", "<C-w>v") -- split window vertically
+    keymap.set("t", "<leader>sh", "<C-w>s") -- split window horizontally
+    keymap.set("t", "<leader>se", "<C-w>=") -- make split windows equal width & height
+    keymap.set("t", "<leader>sx", ":close<CR>") -- close current split window
+    keymap.set("t", "<leader>to", ":tabnew<CR>") -- open new tab
+    keymap.set("t", "<leader>tx", ":tabclose<CR>") -- close current tab
+    keymap.set("t", "<leader>tl", ":tabn<CR>") --  go to next tab
+    keymap.set("t", "<leader>th", ":tabp<CR>") --  go to previous tab
+    -- Move selected line / block of text in visual mode
+    keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+    keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
     -- 🔹 LSP Keymap (d)
     vim.keymap.set('n', '<Leader>dl', function()
         local new_config = not vim.diagnostic.config().virtual_lines
