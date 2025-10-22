@@ -4,6 +4,18 @@ function M.setup()
     -- 🔹 Neovim Keymaps
     local defaults = { noremap = true, silent = true }
     vim.keymap.set('n', '<leader>C', ':keepjumps normal! ggyG<cr>', defaults) -- Select all text in the current buffer
+    -- Terminal
+    local opts = {buffer = 0}
+    vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+    vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+    vim.keymap.set("v", "<space>s", function()
+        require("toggleterm").send_lines_to_terminal("visual_selection",true, { args = vim.v.count })
+    end)
+    vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+    vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+    vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+    vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+    vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
     -- Resize buffers
     vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", defaults)
     vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", defaults)
@@ -52,6 +64,19 @@ function M.setup()
         local new_config = not vim.diagnostic.config().virtual_lines
         vim.diagnostic.config({ virtual_lines = new_config })
     end, { desc = 'Toggle diagnostic virtual_lines' })
+
+    -- 🔹 ToggleTerm Keymap (~)
+    function M.set_toggleterm_keymaps(term_bufnr)
+        local opts = { buffer = term_bufnr, silent = true }
+        vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+        vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+        vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+        vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+        vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+        vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+        vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+    end
+
 
 
     -- 🔹 Harpoon Keymaps (h)
