@@ -6,6 +6,7 @@
 !nvim/
 !tmux/
 !.bashrc
+!README.md
 
 # Optional: Ignore contents of untracked directories unless explicitly allowed
 nvim/*
