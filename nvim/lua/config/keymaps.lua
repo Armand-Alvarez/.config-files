@@ -4,6 +4,7 @@ function M.setup()
     -- 🔹 Neovim Keymaps
     local defaults = { noremap = true, silent = true }
     vim.keymap.set('n', '<leader>C', ':keepjumps normal! ggyG<cr>', defaults) -- Select all text in the current buffer
+    --
     -- Terminal
     local opts = {buffer = 0}
     vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
@@ -16,6 +17,7 @@ function M.setup()
     vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
     vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
     vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+    --
     -- Resize buffers
     vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", defaults)
     vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", defaults)
@@ -25,6 +27,7 @@ function M.setup()
     vim.keymap.set("t", "<C-Down>", "<cmd>resize +2<CR>", defaults)
     vim.keymap.set("t", "<C-Left>", "<cmd>vertical resize -2<CR>", defaults)
     vim.keymap.set("t", "<C-Right>", "<cmd>vertical resize +2<CR>", defaults)
+    --
     -- LSP
     vim.keymap.set("n", "<leader>gd", ":lua vim.lsp.buf.definition()<CR>", defaults)
     vim.keymap.set("n", "<leader>gi", ":lua vim.lsp.buf.implementation()<CR>", defaults)
@@ -32,12 +35,13 @@ function M.setup()
     vim.keymap.set("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", defaults)
     vim.keymap.set("n", "<leader>gr", ":lua vim.lsp.buf.references()<CR>", defaults)
     local keymap = vim.keymap -- for conciseness
+    --
     -- use jk to exit insert mode
     keymap.set("i", "jk", "<ESC>")
+    --
     -- clear search highlights
     keymap.set("n", "<ESC>", ":nohl<CR>")
-    -- Terminal stuff
-
+    --
     -- window management
     keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
     keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
@@ -55,6 +59,7 @@ function M.setup()
     keymap.set("t", "<leader>tx", ":tabclose<CR>") -- close current tab
     keymap.set("t", "<leader>tl", ":tabn<CR>") --  go to next tab
     keymap.set("t", "<leader>th", ":tabp<CR>") --  go to previous tab
+    --
     -- Move selected line / block of text in visual mode
     keymap.set("v", "J", ":m '>+1<CR>gv=gv")
     keymap.set("v", "K", ":m '<-2<CR>gv=gv")
