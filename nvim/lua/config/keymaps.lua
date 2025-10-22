@@ -173,6 +173,14 @@ function M.setup()
     end, { desc = 'Focus NvimTree window' })
 
 
+    -- Copilot keymaps (C)
+    vim.keymap.set('n', '<leader>Ce', "<cmd>Copilot enable<CR>", { desc = "Enable Copilot" })
+    vim.keymap.set('n', '<leader>Cd', "<cmd>Copilot disable<CR>", { desc = "Disable Copilot" })
+    vim.keymap.set('i', "C-j", function()
+        require("copilot.suggestion").accept()
+    end, { desc = "Accept Copilot suggestion" })
+
+
     -- Telescope (f)
     vim.keymap.set('n', '<leader>ff', function()
         require('telescope.builtin').find_files()
