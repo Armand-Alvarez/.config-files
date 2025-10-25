@@ -5,19 +5,6 @@ function M.setup()
     local defaults = { noremap = true, silent = true }
     vim.keymap.set('n', '<leader>C', ':keepjumps normal! ggyG<cr>', defaults) -- Select all text in the current buffer
     --
-    -- Terminal
-    local opts = {buffer = 0}
-    vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-    vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
-    vim.keymap.set("v", "<space>s", function()
-        require("toggleterm").send_lines_to_terminal("visual_selection",true, { args = vim.v.count })
-    end)
-    vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-    vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-    vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-    vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
-    vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
-    --
     -- Resize buffers
     vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", defaults)
     vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", defaults)
@@ -46,19 +33,11 @@ function M.setup()
     keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
     keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
     keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-    keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+    keymap.set("n", "<leader>qq", ":close<CR>") -- close current split window
     keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
     keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
     keymap.set("n", "<leader>tl", ":tabn<CR>") --  go to next tab
     keymap.set("n", "<leader>th", ":tabp<CR>") --  go to previous tab
-    keymap.set("t", "<leader>sv", "<C-w>v") -- split window vertically
-    keymap.set("t", "<leader>sh", "<C-w>s") -- split window horizontally
-    keymap.set("t", "<leader>se", "<C-w>=") -- make split windows equal width & height
-    keymap.set("t", "<leader>sx", ":close<CR>") -- close current split window
-    keymap.set("t", "<leader>to", ":tabnew<CR>") -- open new tab
-    keymap.set("t", "<leader>tx", ":tabclose<CR>") -- close current tab
-    keymap.set("t", "<leader>tl", ":tabn<CR>") --  go to next tab
-    keymap.set("t", "<leader>th", ":tabp<CR>") --  go to previous tab
     --
     -- Move selected line / block of text in visual mode
     keymap.set("v", "J", ":m '>+1<CR>gv=gv")
