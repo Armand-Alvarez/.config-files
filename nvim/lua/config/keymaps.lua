@@ -1,5 +1,4 @@
 local M = {}
-
 function M.setup()
     -- 🔹 Neovim Keymaps
     local defaults = { noremap = true, silent = true }
@@ -160,9 +159,6 @@ function M.setup()
     -- Copilot keymaps (C)
     vim.keymap.set('n', '<leader>Ce', "<cmd>Copilot enable<CR>", { desc = "Enable Copilot" })
     vim.keymap.set('n', '<leader>Cd', "<cmd>Copilot disable<CR>", { desc = "Disable Copilot" })
-    vim.keymap.set('i', "C-j", function()
-        require("copilot.suggestion").accept()
-    end, { desc = "Accept Copilot suggestion" })
 
 
     -- Telescope (f)
@@ -201,6 +197,5 @@ function M.setup()
     vim.keymap.set('n', '<leader>fs', function()
         require('telescope.builtin').builtin()
     end, { desc = "Telescope: Show built-in pickers" })
-
 end
 return M
