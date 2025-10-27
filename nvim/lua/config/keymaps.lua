@@ -49,6 +49,7 @@ function M.setup()
     end, { desc = 'Toggle diagnostic virtual_lines' })
 
     -- 🔹 ToggleTerm Keymap (~)
+    vim.keymap.set('n', '<leader>~~', "<cmd>ToggleTerm<CR>")
     function _G.set_terminal_keymaps()
         local opts = {buffer = 0}
         vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
