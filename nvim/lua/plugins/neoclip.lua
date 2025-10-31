@@ -6,5 +6,7 @@ return {
     },
     opts = {
         history = 100,
+        enable_persistent_history = true,
+        continuous_sync = true,
     }
 }
