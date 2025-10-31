@@ -1,5 +1,4 @@
 local M = {}
-
 function M.setup()
     -- 🔹 Neovim Keymaps
     local defaults = { noremap = true, silent = true }
@@ -38,22 +37,14 @@ function M.setup()
     keymap.set("n", "<ESC>", ":nohl<CR>")
     --
     -- window management
-    keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-    keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
+    keymap.set("n", "<leader>sl", "<C-w>v") -- split window vertically
+    keymap.set("n", "<leader>sj", "<C-w>s") -- split window horizontally
     keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-    keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+    keymap.set("n", "<leader>qq", ":close<CR>") -- close current split window
     keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
     keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
     keymap.set("n", "<leader>tl", ":tabn<CR>") --  go to next tab
     keymap.set("n", "<leader>th", ":tabp<CR>") --  go to previous tab
-    keymap.set("t", "<leader>sv", "<C-w>v") -- split window vertically
-    keymap.set("t", "<leader>sh", "<C-w>s") -- split window horizontally
-    keymap.set("t", "<leader>se", "<C-w>=") -- make split windows equal width & height
-    keymap.set("t", "<leader>sx", ":close<CR>") -- close current split window
-    keymap.set("t", "<leader>to", ":tabnew<CR>") -- open new tab
-    keymap.set("t", "<leader>tx", ":tabclose<CR>") -- close current tab
-    keymap.set("t", "<leader>tl", ":tabn<CR>") --  go to next tab
-    keymap.set("t", "<leader>th", ":tabp<CR>") --  go to previous tab
     --
     -- Move selected line / block of text in visual mode
     keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -66,8 +57,8 @@ function M.setup()
     end, { desc = 'Toggle diagnostic virtual_lines' })
 
     -- 🔹 ToggleTerm Keymap (~)
-    function M.set_toggleterm_keymaps(term_bufnr)
-        local opts = { buffer = term_bufnr, silent = true }
+    function _G.set_terminal_keymaps()
+        local opts = {buffer = 0}
         vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
         vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
         vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
@@ -76,6 +67,9 @@ function M.setup()
         vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
         vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
     end
+
+    -- if you only want these mappings for toggle term use term://*toggleterm#* instead
+    vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 
 
@@ -176,7 +170,10 @@ function M.setup()
     -- Copilot keymaps (C)
     vim.keymap.set('n', '<leader>Ce', "<cmd>Copilot enable<CR>", { desc = "Enable Copilot" })
     vim.keymap.set('n', '<leader>Cd', "<cmd>Copilot disable<CR>", { desc = "Disable Copilot" })
+<<<<<<< HEAD
     -- Accept can be found in copilot config
+=======
+>>>>>>> d441a84c1a1cf16f4c508d5bc72a2d88bcb368d6
 
 
     -- Telescope (f)
@@ -215,6 +212,5 @@ function M.setup()
     vim.keymap.set('n', '<leader>fs', function()
         require('telescope.builtin').builtin()
     end, { desc = "Telescope: Show built-in pickers" })
-
 end
 return M
