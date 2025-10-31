@@ -176,9 +176,7 @@ function M.setup()
     -- Copilot keymaps (C)
     vim.keymap.set('n', '<leader>Ce', "<cmd>Copilot enable<CR>", { desc = "Enable Copilot" })
     vim.keymap.set('n', '<leader>Cd', "<cmd>Copilot disable<CR>", { desc = "Disable Copilot" })
-    vim.keymap.set('i', "C-j", function()
-        require("copilot.suggestion").accept()
-    end, { desc = "Accept Copilot suggestion" })
+    -- Accept can be found in copilot config
 
 
     -- Telescope (f)
