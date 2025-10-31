@@ -12,11 +12,6 @@ function M.setup()
     vim.keymap.set("v", "<space>s", function()
         require("toggleterm").send_lines_to_terminal("visual_selection",true, { args = vim.v.count })
     end)
-    vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-    vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-    vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-    vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
-    vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
     --
     -- Resize buffers
     vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", defaults)
