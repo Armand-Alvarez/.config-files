@@ -33,10 +33,10 @@ function M.setup()
     keymap.set("n", "<leader>sj", "<C-w>s") -- split window horizontally
     keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
     keymap.set("n", "<leader>qq", ":close<CR>") -- close current split window
-    keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-    keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-    keymap.set("n", "<leader>tl", ":tabn<CR>") --  go to next tab
-    keymap.set("n", "<leader>th", ":tabp<CR>") --  go to previous tab
+    keymap.set("n", "<leader>To", ":tabnew<CR>") -- open new tab
+    keymap.set("n", "<leader>Tx", ":tabclose<CR>") -- close current tab
+    keymap.set("n", "<leader>Tl", ":tabn<CR>") --  go to next tab
+    keymap.set("n", "<leader>Th", ":tabp<CR>") --  go to previous tab
     --
     -- Move selected line / block of text in visual mode
     keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -135,19 +135,18 @@ function M.setup()
         vim.cmd('Telescope neoclip')
     end, { desc = 'Open Neoclip clipboard history with Telescope' })
 
-    -- Neotest keymaps (T)
-    --local neotest = require("neotest")
+    -- Neotest keymaps (t)
+    local neotest = require("neotest")
 
-    --vim.keymap.set('n', '<leader>Tn', function() neotest.run.run() end, { desc = "Run nearest test" })
-    --vim.keymap.set('n', '<leader>Tf', function() neotest.run.run(vim.fn.expand('%')) end, { desc = "Run current file" })
-    --vim.keymap.set('n', '<leader>Ta', function() neotest.run.run({ suite = true }) end, { desc = "Run all tests" })
-    --vim.keymap.set('n', '<leader>Td', function() neotest.run.run({ strategy = "dap" }) end, { desc = "Debug nearest test" })
-    --vim.keymap.set('n', '<leader>TS', function() neotest.run.stop() end, { desc = "Stop test" })
-    --vim.keymap.set('n', '<leader>Tn', function() neotest.run.attach() end, { desc = "Attach to nearest test" })
-    --vim.keymap.set('n', '<leader>TO', function() neotest.output.open() end, { desc = "Show test output" })
-    --vim.keymap.set('n', '<leader>To', function() neotest.output_panel.toggle() end, { desc = "Toggle output panel" })
-    --vim.keymap.set('n', '<leader>Ts', function() neotest.summary.toggle() end, { desc = "Toggle summary" })
-    --vim.keymap.set('n', '<leader>Tc', function() neotest.run.run({ suite = true, env = { CI = true } }) end, { desc = "Run all tests with CI" })
+    vim.keymap.set('n', '<leader>tn', function() neotest.run.run() end, { desc = "Run nearest test" })
+    vim.keymap.set('n', '<leader>tf', function() neotest.run.run(vim.fn.expand('%')) end, { desc = "Run current file" })
+    vim.keymap.set('n', '<leader>ta', function() neotest.run.run({ suite = true }) end, { desc = "Run all tests" })
+    vim.keymap.set('n', '<leader>td', function() neotest.run.run({ strategy = "dap" }) end, { desc = "Debug nearest test" })
+    vim.keymap.set('n', '<leader>tS', function() neotest.run.stop() end, { desc = "Stop test" })
+    vim.keymap.set('n', '<leader>tO', function() neotest.output.open() end, { desc = "Show test output" })
+    vim.keymap.set('n', '<leader>to', function() neotest.output_panel.toggle() end, { desc = "Toggle output panel" })
+    vim.keymap.set('n', '<leader>ts', function() neotest.summary.toggle() end, { desc = "Toggle summary" })
+    vim.keymap.set('n', '<leader>tc', function() neotest.run.run({ suite = true, env = { CI = true } }) end, { desc = "Run all tests with CI" })
 
 
     -- Nvim-tree keymaps (e)
