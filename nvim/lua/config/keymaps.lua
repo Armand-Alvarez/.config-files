@@ -158,6 +158,13 @@ function M.setup()
         require('nvim-tree.api').tree.focus()
     end, { desc = 'Focus NvimTree window' })
 
+    vim.keymap.set('n', '<leader>el', function()
+        require('nvim-tree.api').node.open.vertical()
+    end, { desc = 'Open to right' })
+    vim.keymap.set('n', '<leader>ej', function()
+        require('nvim-tree.api').node.open.horizontal()
+    end, { desc = 'Open down' })
+
 
     -- Copilot keymaps (C)
     vim.keymap.set('n', '<leader>Ce', "<cmd>Copilot enable<CR>", { desc = "Enable Copilot" })
