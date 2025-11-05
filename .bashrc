@@ -146,3 +146,4 @@ eval "$(register-python-argcomplete pipx)"
 
 # Alias for ollama
 alias ol="ollama run deepseek-coder:latest"
+alias ask="ollama run deepseek-coder:latest"
